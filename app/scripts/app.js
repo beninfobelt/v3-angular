@@ -2,9 +2,9 @@
 
 var app = angular.module('myapp', ['ui.state', 'restangular']);
 
-app.config(function($stateProvider /*, $urlRouterProvider*/){
+app.config(function($stateProvider, $urlRouterProvider){
   
-  //$urlRouterProvider.otherwise('/otherwise');
+  $urlRouterProvider.otherwise('/home');
  
   $stateProvider
       .state('template', {

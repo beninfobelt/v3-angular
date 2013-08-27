@@ -28,7 +28,7 @@ app.controller('menuCtrl', ['$scope',
 }]);
 
 
-app.controller('peopleCtrl', ['$scope', 'dataFactory',
+app.controller('peopleCtrl', ['$scope', 'dataFactory', '$http', '$templateCache',
         function ($scope, dataFactory, $http, $templateCache) {
 
     $scope.peopleList = [
