@@ -3,9 +3,10 @@
 /*.config(function($provide) {
         $provide*/
 
-angular.module('myapp')
-    .factory('dataFactory', ['$http',
-                              function($http) {
+var app = angular.module('myapp');
+
+app.factory('dataFactory', ['$resource',
+                              function($resource) {
             
             var urlBase = 'http://search.ams.usda.gov/farmersmarkets/v1/data.svc/zipSearch?zip=60613';
             var dataFactory = {};
@@ -16,31 +17,23 @@ angular.module('myapp')
 
             dataFactory =  {
                 animal: function() {
-                    return "cow"
+                    return 'cow';
                 },
                 color: function() {
-                    return "orange"
+                    return 'orange';
                 },
                 farmers: function() {
-/*
-                    function() {
-                       return $http.get('http://search.ams.usda.gov/farmersmarkets/v1/data.svc/zipSearch?zip=60613')
-                       .then(function(result) { 
-                            return result.data; 
-                        });
-                    }*/
 
-                },
-                getProjects: function() {
+                    return $resource('http://search.ams.usda.gov/farmersmarkets/v1/data.svc/zipSearch', { zip: '60613' }, {
+                              'getSelect': { method: 'GET', isArray: false, params: { action: 'GetSelect' } }
+                            });
+                    /*
+                    var dataInfo = $resource('http://search.ams.usda.gov/farmersmarkets/v1/data.svc/zipSearch', {
+                          zip:'60613'
+                        }).get();
 
-                    return $resource('http://search.ams.usda.gov/farmersmarkets/v1/data.svc/zipSearch?zip=60613');
-
-                },
-                saveProjects: function() {
-
-                    Restangular.all('projects').post($scope.project).then(function(project) {
-                      $location.path('/edit/' + project._id.$oid);
-                    });
+                    return dataInfo;
+                    */
 
                 }
             };
@@ -50,18 +43,14 @@ angular.module('myapp')
 
     //});
 
+
+
+
 /*
-angular.module('myapp', [])
-  .factory('Books', ['$http', function($http){
-    return{
-      get: function(callback){
-          $http.get('http://search.ams.usda.gov/farmersmarkets/v1/data.svc/zipSearch?zip=60613').success(function(data) {
-          // prepare data here
-          callback(data);
-        });
-      }
-    };
-  }]);*/
+app.factory('Article', function($resource) {
+    return $resource('api/articles/:keywords', {keywords: '@keywords'}, {
+        query: {method:'GET', params:{}, isArray:true}
+    });*/
 
 
 

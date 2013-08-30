@@ -45,24 +45,28 @@ app.controller('peopleCtrl', ['$scope', 'dataFactory', '$http', '$templateCache'
 
     $scope.hello = 'smart';
 
-    //$scope.status;
+    
     $scope.animalList = dataFactory.animal();
     $scope.colorList = dataFactory.color();
 
-    $scope.domainGet = function() {
+    $scope.domains = [];
 
-        $http({method: 'GET', url: 'http://search.ams.usda.gov/farmersmarkets/v1/data.svc/zipSearch?zip=60613', cache: $templateCache}).
+    $scope.status = "";
+
+    //$scope.domainData = dataFactory.farmers().get();
+
+
+        $http({method: 'GET', url: 'http://api.linkedin.com/v1/people/~6646437?format=json', cache: $templateCache}).
             success(function(data, status) {
-                $scope.domainStatus = status;
-                $scope.domainData = data;
+                $scope.status = status;
+                $scope.domains = data;
             }).
             error(function(data, status) {
-                $scope.domainData = "[]";
-                $scope.domainStatus = status;
+                $scope.domains = "[]";
+                $scope.status = status;
             });
-    };
 
-    $scope.domainGet();
+
 /*
     $scope.foo = myService.getFoo();
     dataFactory.farmers().then(function(data) {
