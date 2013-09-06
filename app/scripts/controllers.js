@@ -1,11 +1,9 @@
+'use strict';
+
 var app = angular.module('myapp');
 
-app.controller('menuCtrl', ['$scope', 
+app.controller('menuCtrl', ['$scope',
         function ($scope) {
-
-    $scope.status;
-    $scope.customers;
-    $scope.orders;
 
     $scope.menuItems = [
       'roles',
@@ -25,7 +23,7 @@ app.controller('menuCtrl', ['$scope',
       'tasks'
     ];
 
-}]);
+  }]);
 
 
 app.controller('peopleCtrl', ['$scope', 'dataFactory', '$http', '$templateCache',
@@ -51,20 +49,20 @@ app.controller('peopleCtrl', ['$scope', 'dataFactory', '$http', '$templateCache'
 
     $scope.domains = [];
 
-    $scope.status = "";
+    $scope.status = '';
 
     //$scope.domainData = dataFactory.farmers().get();
 
 
-        $http({method: 'GET', url: 'http://api.linkedin.com/v1/people/~6646437?format=json', cache: $templateCache}).
+    $http({method: 'GET', url: 'http://api.linkedin.com/v1/people/~6646437?format=json', cache: $templateCache}).
             success(function(data, status) {
                 $scope.status = status;
                 $scope.domains = data;
-            }).
+              }).
             error(function(data, status) {
-                $scope.domains = "[]";
+                $scope.domains = '[]';
                 $scope.status = status;
-            });
+              });
 
 
 /*
@@ -88,7 +86,7 @@ app.controller('peopleCtrl', ['$scope', 'dataFactory', '$http', '$templateCache'
             });
     }*/
 
-}]);
+  }]);
 
 
 /*

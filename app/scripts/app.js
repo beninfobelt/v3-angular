@@ -8,21 +8,21 @@ app.config(function($stateProvider, $urlRouterProvider){
  
   $stateProvider
       .state('template', {
-            url: '/home',
-            templateUrl: '/views/partials/template.html'
-        })
+    url: '/home',
+    templateUrl: '/views/partials/template.html'
+  })
       .state('route1', {
-            parent: 'template',
-            url: '/route1',
-            templateUrl: '/views/partials/route1.html',
-            controller: 'menuCtrl'
-        })
+    parent: 'template',
+    url: '/route1',
+    templateUrl: '/views/partials/route1.html',
+    controller: 'menuCtrl'
+  })
       .state('people', {
-            parent: 'template',
-            url: '/people',
-            templateUrl: '/views/partials/people.html',
-            controller: 'peopleCtrl'
-        });
+    parent: 'template',
+    url: '/people',
+    templateUrl: '/views/partials/people.html',
+    controller: 'peopleCtrl'
+  });
 
 });
 

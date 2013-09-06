@@ -8,25 +8,20 @@ var app = angular.module('myapp');
 app.factory('dataFactory', ['$resource',
                               function($resource) {
             
-            var urlBase = 'http://search.ams.usda.gov/farmersmarkets/v1/data.svc/zipSearch?zip=60613';
             var dataFactory = {};
-
-            dataFactory.getStuff = function () {
-                return $http.get(urlBase);
-            };
 
             dataFactory =  {
                 animal: function() {
                     return 'cow';
-                },
+                  },
                 color: function() {
                     return 'orange';
-                },
+                  },
                 farmers: function() {
 
                     return $resource('http://search.ams.usda.gov/farmersmarkets/v1/data.svc/zipSearch', { zip: '60613' }, {
-                              'getSelect': { method: 'GET', isArray: false, params: { action: 'GetSelect' } }
-                            });
+                        'getSelect': { method: 'GET', isArray: false, params: { action: 'GetSelect' } }
+                      });
                     /*
                     var dataInfo = $resource('http://search.ams.usda.gov/farmersmarkets/v1/data.svc/zipSearch', {
                           zip:'60613'
@@ -35,11 +30,11 @@ app.factory('dataFactory', ['$resource',
                     return dataInfo;
                     */
 
-                }
-            };
+                  }
+              };
 
             return dataFactory;
-        }]);
+          }]);
 
     //});
 
