@@ -5,35 +5,7 @@
 
   {{hello}}, {{animalList}}, {{colorList}}
 </ul>
-<ul>
-  <li ng-repeat="peep in animalList">{{peep}}</li>
-</ul>
 <br>
 <ul>
-  <li ng-repeat="info in domainData.results">{{info}}</li>
+  <li ng-repeat="info in domainData">{{info}}</li>
 </ul>
-
-
-
-<!--
-
-        <div ng-controller="domainController">
-            <input type="text" ng-model="data" ng-hide=true>
-            <input type="text" ng-model="status" ng-hide=true>
-            <table>
-                <tr>
-                    <td>Name</td><td>Host</td><td>Port</td>
-                </tr>
-                <tr ng-repeat="domain in data">
-                    <td>{{domain.name}}</td><td>{{domain.host}}</td><td>{{domain.port}}</td>
-                </tr>
-            </table>
-            <input type="text" ng-model="name">
-            <input type="text" ng-model="host">
-            <input type="text" ng-m
-odel="port"><br>
-            <button ng-click="get()">GET</button>
-            <button ng-click="post()">POST</button><br>
-        </div>
-
-        -->
