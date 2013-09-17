@@ -2,10 +2,10 @@
 
 var app = angular.module('myapp');
 
-app.controller('menuCtrl', ['$scope',
+app.controller('playCtrl', ['$scope',
         function ($scope) {
 
-    $scope.menuItems = [
+    $scope.playItems = [
       'roles',
       'attributeInstance',
       'repositoty',

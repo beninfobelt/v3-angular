@@ -9,13 +9,14 @@ app.config(function($stateProvider, $urlRouterProvider){
   $stateProvider
       .state('template', {
     url: '/home',
-    templateUrl: '/views/partials/template.html'
+    templateUrl: '/views/partials/template.html',
+    controller: 'templateCtrl'
   })
       .state('route1', {
     parent: 'template',
     url: '/route1',
     templateUrl: '/views/partials/route1.html',
-    controller: 'menuCtrl'
+    controller: 'playCtrl'
   })
       .state('people', {
     parent: 'template',

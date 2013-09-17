@@ -1,23 +1,22 @@
 <div class="navbar">
-<div class="navbar-inner">
-  <a class="brand" href="#/home">Quick Start</a>
-  <ul class="nav">
-    <li><a href="#/home/route1">Route 1</a></li>
-	<li><a href="#/home/people">People</a></li>
-    <li><a href="#/home/dataset">Dataset</a></li>
-    
-<!--
-    <li ng-repeat"link in menuItems">
-    	<a href="#/home/people">{{link}}</a>
-    </li>
--->
+  <div class="navbar-inner">
 
-  </ul>
-</div>
+    <ul class="nav">
+      <a class="brand" href="#/home">Quick Start</a>
+      <li><a href="#/home/route1">Route 1</a></li>
+  	  <li><a href="#/home/people">People</a></li>
+      <li ng-repeat="link in menuItems"><a ng-href="#/home/{{link}}">{{link}}</a></li>
+
+      <li ng-repeat="link in sessionItems"><a ng-href="#/home/{{link}}">{{link}}</a></li>
+    </ul>
+  </div>
 </div>
 
-<div class="row">
-<div class="span12">
-  <div class="well" ui-view></div>        
-</div>
+<div class="row-fluid">
+  <div class="span9">
+    <div class="well" ui-view></div>        
+  </div>
+  <div class="span3">
+    <div class="well">cars</div>        
+  </div>
 </div>
