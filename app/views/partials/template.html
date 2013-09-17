@@ -2,21 +2,24 @@
   <div class="navbar-inner">
 
     <ul class="nav">
-      <a class="brand" href="#/home">Quick Start</a>
+      <a class="brand" href="#/home"><img src="/images/orion_head.png"></a>
       <li><a href="#/home/route1">Route 1</a></li>
   	  <li><a href="#/home/people">People</a></li>
       <li ng-repeat="link in menuItems"><a ng-href="#/home/{{link}}">{{link}}</a></li>
+    </ul>
 
+    <ul class="nav pull-right">
       <li ng-repeat="link in sessionItems"><a ng-href="#/home/{{link}}">{{link}}</a></li>
     </ul>
+
   </div>
 </div>
 
 <div class="row-fluid">
-  <div class="span9">
-    <div class="well" ui-view></div>        
+  <div class="content">
+    <div class="well canvas" ui-view></div>        
   </div>
-  <div class="span3">
-    <div class="well">cars</div>        
+  <div class="sidebar">
+    <div class="well feed">cars</div>        
   </div>
 </div>
