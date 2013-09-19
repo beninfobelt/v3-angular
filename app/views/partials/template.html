@@ -1,25 +1,47 @@
-<div class="navbar">
-  <div class="navbar-inner">
+<nav class="navbar lockednav">
+  <div class="deco">
+    <div class="navbar-inner">
 
-    <ul class="nav">
-      <a class="brand" href="#/home"><img src="/images/orion_head.png"></a>
-      <li><a href="#/home/route1">Route 1</a></li>
-  	  <li><a href="#/home/people">People</a></li>
-      <li ng-repeat="link in menuItems"><a ng-href="#/home/{{link}}">{{link}}</a></li>
-    </ul>
+      <ul class="nav">
+        <a class="brand" href="#/home"><img src="/images/orion_head.png"></a>
+        <li><a href="#/home/route1">Route 1</a></li>
+    	  <li><a href="#/home/people">People</a></li>
+        <li ng-repeat="link in menuItems"><a ng-href="#/home/{{link}}">{{link}}</a></li>
+      </ul>
 
-    <ul class="nav pull-right">
-      <li ng-repeat="link in sessionItems"><a ng-href="#/home/{{link}}">{{link}}</a></li>
-    </ul>
-
+      <ul class="nav pull-right">
+        <li ng-repeat="link in sessionItems"><a ng-href="#/home/{{link}}">{{link}}</a></li>
+      </ul>
+    </div>
   </div>
-</div>
+</nav>
 
-<div class="row-fluid">
-  <div class="content">
-    <div class="well canvas" ui-view></div>        
-  </div>
+<div class="row-fluid headstart">
+  
+  <div class="canvas">
+    <div class="well"> 
+    </div>
+  </div>  
+
+  <footer class="navbar">
+    <div class="navbar-inner">
+      <ul class="nav">
+        <li ng-repeat="link in footerItems"><a ng-href="#/home/{{link}}">{{link}}</a></li>
+      </ul>
+    </div>
+  </footer>     
+
+  <div class="nestedWell" ui-view>
+  </div> 
+
   <div class="sidebar">
-    <div class="well feed">cars</div>        
+    <div class="well">
+      <div class="nestedWell">
+        cars
+      </div> 
+    </div>        
   </div>
+
 </div>
+
+

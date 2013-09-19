@@ -1,6 +1,6 @@
 'use strict';
 
-describe('Controller: MainCtrl', function () {
+describe('Controller: playCtrl', function () {
 
   // load the controller's module
   beforeEach(module('myapp'));

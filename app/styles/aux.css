@@ -8,9 +8,19 @@ body.container-fluid {
 	width:96%;
 }
 
-.navbar {
+.headstart {
+    padding-top:85px;
+	overflow: hidden;
+}
+
+.lockednav {
+	padding-top:20px;
 	position:fixed;
 	width: 96%;
+	background-color: #fff;
+}
+
+.deco {
 	box-shadow: 0px 5px 5px #888888;
 	-moz-box-shadow: 0px 5px 5px #888888;
 	-webkit-box-shadow: 0px 5px 5px #888888;
@@ -19,30 +29,43 @@ body.container-fluid {
 }
 
 .sidebar {
-    margin-top:65px;
     width:350px;
 	position:fixed;
 	right:2%;
-	overflow: hidden;
-	height:100%;
+	top:85px;
+	bottom:22px;
+	height:auto;
 }
 
-.content {
-	margin-top:65px;
-    float:left;
-    overflow: hidden;
-	width:100%;
-}
-
-.feed {
+.well {
 	width:auto;
 	height:100%;
-	display:block;
-	margin-bottom:20px;
+	padding:0px !important;
+}
+
+.nestedWell {
+	padding:20px;
+}
+
+
+.content {
+	
+}
+
+.canvas, footer {
+    
 }
 
 .canvas {
-	width:auto;
-	display:block;
-    margin-right:370px;
+	width:100%;
+	position:fixed;
+	top:85px;
+	height:auto;
+	bottom:90px;
+}
+
+footer {
+	bottom:0px;
+	position:fixed;
+	width:100%;
 }

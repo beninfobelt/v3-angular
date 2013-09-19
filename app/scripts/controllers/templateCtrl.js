@@ -18,4 +18,10 @@ app.controller('templateCtrl', ['$scope',
       'Logout'
     ];
 
+    $scope.footerItems = [
+      'InfoBelt Website',
+      'Contact',
+      'Help'
+    ];
+
   }]);
