@@ -1,10 +1,10 @@
 'use strict';
 
-var app = angular.module('myapp', ['ui.state', 'ngResource']);
+var app = angular.module('myapp', ['ui.state', 'ngResource', 'auxFeatures']);
 
 app.config(function($stateProvider, $urlRouterProvider){
   
-  $urlRouterProvider.otherwise('/home');
+  $urlRouterProvider.otherwise('/home/dashboard');
  
   $stateProvider
       .state('template', {
@@ -12,17 +12,32 @@ app.config(function($stateProvider, $urlRouterProvider){
     templateUrl: '/views/partials/template.html',
     controller: 'templateCtrl'
   })
-      .state('route1', {
+      .state('dashboard', {
     parent: 'template',
-    url: '/route1',
-    templateUrl: '/views/partials/route1.html',
+    url: '/dashboard',
+    templateUrl: '/views/partials/dashboard.html',
     controller: 'playCtrl'
   })
-      .state('people', {
+      .state('explore', {
     parent: 'template',
-    url: '/people',
-    templateUrl: '/views/partials/people.html',
+    url: '/explore',
+    templateUrl: '/views/partials/explore.html',
     controller: 'peopleCtrl'
+  })
+      .state('create', {
+    parent: 'template',
+    url: '/create',
+    templateUrl: '/views/partials/create.html'
+  })
+      .state('projects', {
+    parent: 'template',
+    url: '/projects',
+    templateUrl: '/views/partials/projects.html'
+  })
+      .state('admin', {
+    parent: 'template',
+    url: '/admin',
+    templateUrl: '/views/partials/admin.html'
   });
 
 });

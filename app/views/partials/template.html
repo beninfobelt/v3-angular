@@ -3,10 +3,8 @@
     <div class="navbar-inner">
 
       <ul class="nav">
-        <a class="brand" href="#/home"><img src="/images/orion_head.png"></a>
-        <li><a href="#/home/route1">Route 1</a></li>
-    	  <li><a href="#/home/people">People</a></li>
-        <li ng-repeat="link in menuItems"><a ng-href="#/home/{{link}}">{{link}}</a></li>
+        <a class="brand" href="#/home/dashboard"><img src="/images/orion_head.png"></a>
+        <li ng-repeat="link in menuItems"><a ng-href="#/home/{{link}}">{{link | camelCase}}</a></li>
       </ul>
 
       <ul class="nav pull-right">
@@ -17,22 +15,23 @@
 </nav>
 
 <div class="row-fluid headstart">
-  
+
+  <div class="nestedWell content" ui-view>
+  </div> 
+
   <div class="canvas">
-    <div class="well"> 
+    <div class="well leftcut"> 
     </div>
   </div>  
 
-  <footer class="navbar">
-    <div class="navbar-inner">
+  <footer>
+    <div class="navbar navbar-inner leftcut">
       <ul class="nav">
         <li ng-repeat="link in footerItems"><a ng-href="#/home/{{link}}">{{link}}</a></li>
       </ul>
     </div>
   </footer>     
 
-  <div class="nestedWell" ui-view>
-  </div> 
 
   <div class="sidebar">
     <div class="well">
