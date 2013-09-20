@@ -1,6 +1,6 @@
 <nav class="navbar lockednav">
-  <div class="deco">
-    <div class="navbar-inner">
+  <div class="deco"> <!-- need this extra nest div so we can use padding to hide scrolling content-->
+    <div class="navbar-inner deco">
 
       <ul class="nav">
         <a class="brand" href="#/home/dashboard"><img src="/images/orion_head.png"></a>
@@ -16,29 +16,19 @@
 
 <div class="row-fluid headstart">
 
-  <div class="nestedWell content" ui-view>
+  <div class="content" ui-view>
   </div> 
 
-  <div class="canvas">
-    <div class="well leftcut"> 
-    </div>
+  <div class="canvas well">
   </div>  
 
-  <footer>
-    <div class="navbar navbar-inner leftcut">
-      <ul class="nav">
+  <footer class="navbar">
+      <ul class="nav navbar-inner">
         <li ng-repeat="link in footerItems"><a ng-href="#/home/{{link}}">{{link}}</a></li>
       </ul>
-    </div>
-  </footer>     
+  </footer> 
 
-
-  <div class="sidebar">
-    <div class="well">
-      <div class="nestedWell">
-        cars
-      </div> 
-    </div>        
+  <div class="sidebar well">
   </div>
 
 </div>
