@@ -24,4 +24,6 @@ app.controller('templateCtrl', ['$scope',
       'Help'
     ];
 
+    $scope.sidebarState = true;
+
   }]);
