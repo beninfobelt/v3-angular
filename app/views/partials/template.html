@@ -1,8 +1,8 @@
 <nav class="navbar lockednav">
   <div class="deco"> <!-- need this extra nest div so we can use padding to hide scrolling content-->
-    <div class="navbar-inner">
+    <div class="navbar-inner ">
 
-      <ul class="nav">
+      <ul class="nav ">
         <a class="brand" href="#/home/dashboard"><img src="/images/chronos_head.png"></a>
         <li ng-repeat="link in menuItems"><a ng-href="#/home/{{link}}">{{link | camelCase}}</a></li>
       </ul>
@@ -14,7 +14,7 @@
   </div>
 </nav>
 
-<div class="row-fluid headstart">
+<div class="row-fluid">
 
   <div class="content skinny" 
        ng-class="{'skinny':sidebarState, 'fat':!sidebarState}"

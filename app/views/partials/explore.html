@@ -1,11 +1,21 @@
-<h1>Explore</h1>
-<hr/>
-<ul>
-  <li ng-repeat="emp in peopleList">{{emp}}</li>
+<div head-board ss-status="sidebarState">Explore</div>
 
-  {{hello}}, {{animalList}}, {{colorList}}
-</ul>
-<br>
-<ul>
-  <li ng-repeat="info in domainData">{{info}}</li>
-</ul>
+<div class="canvasMenuControls canvasMenuSelections">
+	<ul>
+		<li><a href="" smooth-scroll target="p1" offset="175">Line of Business</a></li>
+		<li><a href="" smooth-scroll target="p2" offset="175">Projects by Region</a></li>
+		<li><a href="" smooth-scroll target="p3" offset="175">Storage Saves</a></li>
+		<li><a href="" smooth-scroll target="p4" offset="175">System Status</a></li>
+	</ul>
+</div>
+<div class="canvasPot">
+	<ul>
+	  <li ng-repeat="emp in peopleList">{{emp}}</li>
+
+	  {{hello}}, {{animalList}}, {{colorList}}
+	</ul>
+	<br>
+	<ul>
+	  <li ng-repeat="info in domainData">{{info}}</li>
+	</ul>
+</div>

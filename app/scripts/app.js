@@ -2,6 +2,8 @@
 
 var app = angular.module('myapp', ['ui.state', 'ngResource', 'auxFeatures', 'angularSmoothscroll']);
 
+angular.module('auxFeatures', []);
+
 app.config(function($stateProvider, $urlRouterProvider){
   
   $urlRouterProvider.otherwise('/home/dashboard');
@@ -18,12 +20,10 @@ app.config(function($stateProvider, $urlRouterProvider){
     url: '/dashboard',
     views: {
       "content": {
-        templateUrl: '/views/partials/dashboard.html',
-        controller: 'playCtrl'
+        templateUrl: '/views/partials/dashboard.html'
       },
       "sidebar": {
-        templateUrl: '/views/partials/feed.html',
-        controller: 'playCtrl'
+        templateUrl: '/views/partials/feed.html'
       }
     }
   })
@@ -47,10 +47,12 @@ app.config(function($stateProvider, $urlRouterProvider){
     templateUrl: '/views/partials/create.html',
     views: {
       "content": {
-        templateUrl: '/views/partials/create.html'
+        templateUrl: '/views/partials/create.html',
+        controller: 'playCtrl'
       },
       "sidebar": {
-        templateUrl: '/views/partials/feed.html'
+        templateUrl: '/views/partials/feed.html',
+        controller: 'playCtrl'
       }
     }
   })
@@ -77,7 +79,18 @@ app.config(function($stateProvider, $urlRouterProvider){
         templateUrl: '/views/partials/feed.html'
       }
     }
+  })
+      .state('audit-log', {
+    parent: 'template',
+    url: '/audit-log',
+    views: {
+      "content": {
+        templateUrl: '/views/partials/audit-log.html'
+      },
+      "sidebar": {
+        templateUrl: '/views/partials/feed.html'
+      }
+    }
   });
 
 });
-
