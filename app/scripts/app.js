@@ -1,6 +1,10 @@
 'use strict';
 
-var app = angular.module('myapp', ['ui.state', 'ngResource', 'auxFeatures', 'angularSmoothscroll']);
+var app = angular.module('myapp', ['ui.state', 
+                                   'ngResource', 
+                                   'auxFeatures',
+                                   'infinite-scroll',
+                                   'angularSmoothscroll']);
 
 angular.module('auxFeatures', []);
 

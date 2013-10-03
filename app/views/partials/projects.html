@@ -15,10 +15,24 @@
 	</button>
 </form>
 
-<div class="canvasMenuControls canvasMenuCtrlPM">
-	<ul class="canvasMenuSelections">
-		<li><a href="" smooth-scroll target="p1" offset="175">Stock Loan</a></li>
+<!--<perfect-scrollbar wheel-propagation="true" wheel-speed="50" refresh-on-change="someArray">-->
+<div class="canvasMenuControls canvasMenuCtrlPM" nice-scrollbar>
+	<ul class="canvasMenuSelections" ng-controller="projectsCtrl" infinite-scroll='loadMore()' infinite-scroll-distance='8'>
+		<!--
+		<li ng-repeat="alphaProject in reddit.items">
+			<a href="" smooth-scroll target="p1" offset="175">{{alphaProject.author}}</a>
+		</li>
+		<li ng-show='reddit.busy'>Loading data...</li>-->
+
+		<li ng-repeat="singleProject in projectList">
+			<a href="" smooth-scroll target="p1" offset="175">{{singleProject}}</a>
+		</li>
+		<li ng-repeat='image in images'>
+			{{image}}
+		</li>
+		<!--
 		<li><a href="" smooth-scroll target="p2" offset="175">Fixed Income</a></li>
+		<li><a href="" smooth-scroll target="p1" offset="175">Stock Loan</a></li>
 		<li><a href="" smooth-scroll target="p3" offset="175">Mortgage</a></li>
 		<li><a href="" smooth-scroll target="p4" offset="175">Human Resources</a></li>
 		<li><a href="" smooth-scroll target="p4" offset="175">Estate Planning</a></li>
@@ -37,9 +51,29 @@
 		<li><a href="" smooth-scroll target="p3" offset="175">Mortgage</a></li>
 		<li><a href="" smooth-scroll target="p4" offset="175">Human Resources</a></li>
 		<li><a href="" smooth-scroll target="p4" offset="175">Estate Planning</a></li>
+		-->
 	</ul>
 </div>
+<!--</perfect-scrollbar>-->
 <div class="canvasPot">
 	<div project-detail></div>
 	<div project-detail></div>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
 </div>

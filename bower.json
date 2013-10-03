@@ -15,7 +15,9 @@
     "angular-scenario": "1.2.0-rc.2",
     "angular-resource": "1.2.0-rc.2",
     "angular": "1.2.0-rc.2",
-    "angular-smoothscroll": "*"
+    "angular-smoothscroll": "*",
+    "jquery-nicescroll": "*",
+    "nginfinitescroll": "~1.0.0"
   },
   "resolutions": {
     "angular": ">= 1.0.6"

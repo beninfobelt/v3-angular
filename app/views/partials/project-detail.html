@@ -1,10 +1,28 @@
-<div class="projectBlock">
-	<h4>Project One</h4>
-	<ul class="nav nav-tabs pull-right">
-	  <li><a href="#">Discovered</a></li>
-	  <li><a href="#">Archived</a></li>
-	  <li><a href="#">Expired</a></li>
-	  <li><a href="#">Destroyed</a></li>
-	  <li class="active"><a href="#">Configuration</a></li>
+<div class="projectBlock" ng-controller="projectDetailCtrl">
+	<div class="projectHeader">
+		<i class="icon-plus-sign"></i><h4>Project One</h4>
+		<ul class="nav nav-tabs pull-right">
+		  <li><a href="#">Discovered</a></li>
+		  <li><a href="#">Archived</a></li>
+		  <li><a href="#">Expired</a></li>
+		  <li class="active"><a href="#">Destroyed</a></li>
+		  <li><a href="#">Configuration</a></li>
+		</ul>
+	</div>
+	<ul class="sortLinks">
+        <li ng-repeat="(i,th) in head">{{th}}</l1>
 	</ul>
+	<div class="projectBody" nice-scrollbar>
+		<table class="table">  
+	        <tbody>  
+	          <!-- <tr ng-repeat="row in body.$orderBy(sort.column, sort.descending)"> -->
+	          <tr ng-repeat="row in body">
+	            <td>{{row.a}}</td>
+	            <td>{{row.b}}</td>
+	            <td>{{row.c}}</td>  
+	            <td>{{row.d}}</td>  
+	          </tr>  
+	        </tbody>  
+	      </table> 
+	</div>
 </div>
