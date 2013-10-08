@@ -6,11 +6,11 @@ app.controller('templateCtrl', ['$scope',
         function ($scope) {
 
     $scope.menuItems = [
-      'dashboard',
-      'explore',
-      'create',
       'projects',
-      'admin'
+      'explore',
+      'governance',
+      'create',
+      'configuration'
     ];
 
     $scope.sessionItems = [

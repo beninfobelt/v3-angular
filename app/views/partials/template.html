@@ -3,7 +3,7 @@
     <div class="navbar-inner ">
 
       <ul class="nav ">
-        <a class="brand" href="#/home/dashboard"><img src="/images/chronos_head.png"></a>
+        <li><a href="#/home/projects"><img src="/images/chronos_head.png"></a></li>
         <li ng-repeat="link in menuItems"><a ng-href="#/home/{{link}}">{{link | camelCase}}</a></li>
       </ul>
 
@@ -16,6 +16,10 @@
 
 <div class="row-fluid">
 
+  <div class="topshelf" 
+       ng-class="{'skinny':sidebarState, 'fat':!sidebarState}" > 
+  </div> <!-- simply an underline to controlz-index -->
+
   <div class="content skinny" 
        ng-class="{'skinny':sidebarState, 'fat':!sidebarState}"
        ui-view="content" >
@@ -24,6 +28,14 @@
   <div class="canvas well" 
        ng-class="{'skinny':sidebarState, 'fat':!sidebarState}" >
   </div>  
+
+  <div class="canvasMenu" 
+       ui-view="menu" >
+  </div> 
+
+  <div class="bottomshelf" 
+       ng-class="{'skinny':sidebarState, 'fat':!sidebarState}" > 
+  </div> <!-- simply an underline to controlz-index -->
 
   <footer class="navbar skinny"
           ng-class="{'skinny':sidebarState, 'fat':!sidebarState}" >
@@ -34,7 +46,7 @@
 
         <ul class="nav pull-right">
           <li>
-            <label for="sideClick" >Sidebar:</label>
+            <label for="sideClick" >Activity Monitor:</label>
             <input id="sideClick" type="checkbox" ng-model="sidebarState">
           </li>
         </ul>

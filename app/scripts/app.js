@@ -10,7 +10,7 @@ angular.module('auxFeatures', []);
 
 app.config(function($stateProvider, $urlRouterProvider){
   
-  $urlRouterProvider.otherwise('/home/dashboard');
+  $urlRouterProvider.otherwise('/home/projects');
  
   $stateProvider
       .state('template', {
@@ -27,7 +27,24 @@ app.config(function($stateProvider, $urlRouterProvider){
         templateUrl: '/views/partials/dashboard.html'
       },
       "sidebar": {
-        templateUrl: '/views/partials/feed.html'
+        templateUrl: '/views/partials/activity-monitor.html'
+      }
+    }
+  })
+      .state('projects', {
+    parent: 'template',
+    url: '/projects',
+    views: {
+      "content": {
+        templateUrl: '/views/partials/projects.html',
+        controller: 'projectsCtrl'
+      },
+      "menu": {
+        templateUrl: '/views/partials/projects-menu.html',
+        controller: 'projectsCtrl'
+      },
+      "sidebar": {
+        templateUrl: '/views/partials/activity-monitor.html'
       }
     }
   })
@@ -39,8 +56,12 @@ app.config(function($stateProvider, $urlRouterProvider){
         templateUrl: '/views/partials/explore.html',
         controller: 'peopleCtrl'
       },
+      "menu": {
+        templateUrl: '/views/partials/explore-menu.html',
+        controller: 'projectsCtrl'
+      },
       "sidebar": {
-        templateUrl: '/views/partials/feed.html',
+        templateUrl: '/views/partials/activity-monitor.html',
         controller: 'peopleCtrl'
       }
     }
@@ -55,44 +76,37 @@ app.config(function($stateProvider, $urlRouterProvider){
         controller: 'playCtrl'
       },
       "sidebar": {
-        templateUrl: '/views/partials/feed.html',
+        templateUrl: '/views/partials/activity-monitor.html',
         controller: 'playCtrl'
       }
     }
   })
-      .state('projects', {
+      .state('governance', {
     parent: 'template',
-    url: '/projects',
+    url: '/governance',
+    templateUrl: '/views/partials/governance.html',
     views: {
       "content": {
-        templateUrl: '/views/partials/projects.html'
+        templateUrl: '/views/partials/governance.html',
+        controller: 'playCtrl'
       },
       "sidebar": {
-        templateUrl: '/views/partials/feed.html'
+        templateUrl: '/views/partials/activity-monitor.html',
+        controller: 'playCtrl'
       }
     }
   })
-      .state('admin', {
+      .state('configuration', {
     parent: 'template',
-    url: '/admin',
+    url: '/configuration',
     views: {
       "content": {
-        templateUrl: '/views/partials/admin.html'
+        templateUrl: '/views/partials/configuration.html',
+        controller: 'playCtrl'
       },
       "sidebar": {
-        templateUrl: '/views/partials/feed.html'
-      }
-    }
-  })
-      .state('audit-log', {
-    parent: 'template',
-    url: '/audit-log',
-    views: {
-      "content": {
-        templateUrl: '/views/partials/audit-log.html'
-      },
-      "sidebar": {
-        templateUrl: '/views/partials/feed.html'
+        templateUrl: '/views/partials/activity-monitor.html',
+        controller: 'playCtrl'
       }
     }
   });

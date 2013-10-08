@@ -60,6 +60,16 @@ app.controller('projectDetailCtrl', ['$scope',
               descending: false
           };
 
+          $scope.bunk = [1, 2, 3, 4, 5, 6, 7, 8];
+
+          $scope.loadingMore = function() {
+            var last = $scope.images[$scope.bunk.length - 1];
+            for(var i = 1; i <= 8; i++) {
+              $scope.images.push(last + i);
+            }
+          };
+
+
 /*
           $scope.selectedCls = function(column) {
               return column == scope.sort.column && 'sort-' + scope.sort.descending;

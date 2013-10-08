@@ -6,7 +6,7 @@ app.directive('headBoard', function () {
     return {
       restrict: 'A',
       transclude: true,
-      scope: { status:'=ssStatus' },
+      scope: { status:'=sidebarStatus' },
       templateUrl: '/views/partials/headboard.html'
     };
 });

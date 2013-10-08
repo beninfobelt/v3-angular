@@ -1,79 +1,72 @@
-<div head-board ss-status="sidebarState">Projects</div>
-
-<form class="input-append autoCompleteRow">
-	<input id="projectAutoComplete" type="text">
-	<button class="btn dropdown-toggle btn-mini" data-toggle="dropdown">
-		<span class="caret"></span>
-	</button>
-	<ul class="dropdown-menu">
-	  ...
-	</ul>
-	<button type="submit" 
-			class="btn btn-mini" 
-			id="projectAutoCompletePlacibo">
-		<i class="icon-search"></i>
-	</button>
-</form>
-
-<!--<perfect-scrollbar wheel-propagation="true" wheel-speed="50" refresh-on-change="someArray">-->
-<div class="canvasMenuControls canvasMenuCtrlPM" nice-scrollbar>
-	<ul class="canvasMenuSelections" ng-controller="projectsCtrl" infinite-scroll='loadMore()' infinite-scroll-distance='8'>
-		<!--
-		<li ng-repeat="alphaProject in reddit.items">
-			<a href="" smooth-scroll target="p1" offset="175">{{alphaProject.author}}</a>
-		</li>
-		<li ng-show='reddit.busy'>Loading data...</li>-->
-
-		<li ng-repeat="singleProject in projectList">
-			<a href="" smooth-scroll target="p1" offset="175">{{singleProject}}</a>
-		</li>
-		<li ng-repeat='image in images'>
-			{{image}}
-		</li>
-		<!--
-		<li><a href="" smooth-scroll target="p2" offset="175">Fixed Income</a></li>
-		<li><a href="" smooth-scroll target="p1" offset="175">Stock Loan</a></li>
-		<li><a href="" smooth-scroll target="p3" offset="175">Mortgage</a></li>
-		<li><a href="" smooth-scroll target="p4" offset="175">Human Resources</a></li>
-		<li><a href="" smooth-scroll target="p4" offset="175">Estate Planning</a></li>
-		<li><a href="" smooth-scroll target="p1" offset="175">Stock Loan</a></li>
-		<li><a href="" smooth-scroll target="p2" offset="175">Fixed Income</a></li>
-		<li><a href="" smooth-scroll target="p3" offset="175">Mortgage</a></li>
-		<li><a href="" smooth-scroll target="p4" offset="175">Human Resources</a></li>
-		<li><a href="" smooth-scroll target="p4" offset="175">Estate Planning</a></li>
-		<li><a href="" smooth-scroll target="p1" offset="175">Stock Loan</a></li>
-		<li><a href="" smooth-scroll target="p2" offset="175">Fixed Income</a></li>
-		<li><a href="" smooth-scroll target="p3" offset="175">Mortgage</a></li>
-		<li><a href="" smooth-scroll target="p4" offset="175">Human Resources</a></li>
-		<li><a href="" smooth-scroll target="p4" offset="175">Estate Planning</a></li>
-		<li><a href="" smooth-scroll target="p1" offset="175">Stock Loan</a></li>
-		<li><a href="" smooth-scroll target="p2" offset="175">Fixed Income</a></li>
-		<li><a href="" smooth-scroll target="p3" offset="175">Mortgage</a></li>
-		<li><a href="" smooth-scroll target="p4" offset="175">Human Resources</a></li>
-		<li><a href="" smooth-scroll target="p4" offset="175">Estate Planning</a></li>
-		-->
-	</ul>
-</div>
-<!--</perfect-scrollbar>-->
 <div class="canvasPot">
-	<div project-detail></div>
-	<div project-detail></div>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
+	<div id="g1">
+		<div class="graphHeader">
+			<h4>Line of Business Graph</h4>
+			<form class="form-search pull-right">
+				<div class="input-append">
+					<input id="contentSearchInput" 
+						   type="text" 
+						   class="search-query"
+						   placeholder="Search for Artifacts...">
+					<button type="submit" class="btn btn-mini"><i class="icon-search"></i></button>
+				</div>
+			</form>
+		</div>
+
+		<img src="/images/g1.png" width="100%" height="100%">
+	</div>
+	<br><br><br><br><br><br><br><br>
+
+	<div id="g2">
+		<form class="form-search pull-right">
+			<div class="input-append">
+					<input id="contentSearchInput" 
+						   type="text" 
+						   class="search-query"
+						   placeholder="Search for Artifacts...">
+				<button type="submit" class="btn btn-mini"><i class="icon-search"></i></button>
+			</div>
+		</form>
+			
+		<h4>Projects by Region Graph</h4>
+		<img src="/images/g2.png" width="100%" height="100%">
+	</div>
+	<br><br><br><br><br><br><br><br>
+
+	<div id="g3">
+		<form class="form-search pull-right">
+			<div class="input-append">
+					<input id="contentSearchInput" 
+						   type="text" 
+						   class="search-query"
+						   placeholder="Search for Artifacts...">
+				<button type="submit" class="btn btn-mini"><i class="icon-search"></i></button>
+			</div>
+		</form>
+			
+		<h4>Storage Saves Graph</h4>
+		<img src="/images/g3.png" width="100%" height="100%">
+	</div>
+	<br><br><br><br><br><br><br><br>
+
+	<div id="g4">
+		<form class="form-search pull-right">
+			<div class="input-append">
+					<input id="contentSearchInput" 
+						   type="text" 
+						   class="search-query"
+						   placeholder="Search for Artifacts...">
+				<button type="submit" class="btn btn-mini"><i class="icon-search"></i></button>
+			</div>
+		</form>
+			
+		<h4>System Status Graph</h4>
+		<img src="/images/g4.png" width="100%" height="100%">
+	</div>
+	<br><br><br><br><br><br><br><br>
+
+	<div ng-repeat="singleProject in projectList">
+		<div project-detail id="p{{$index}}">{{singleProject.name}}</div>
+		<!-- <hr> -->
+	</div>
 </div>

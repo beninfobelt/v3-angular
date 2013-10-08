@@ -1,0 +1,53 @@
+<h3 green-man>Projects</h3>
+
+<div class="canvasMenuControls" nice-scrollbar>
+	<ul class="canvasMenuSelections" infinite-scroll='loadMore()' infinite-scroll-distance='10'>
+		<!--
+		<li ng-repeat="alphaProject in reddit.items">
+			<a href="" smooth-scroll target="p1" offset="175">{{alphaProject.author}}</a>
+		</li>
+		-->
+		<li><a href="" smooth-scroll target="g1" offset="65">Line of Business Graph</a></li>
+		<li><a href="" smooth-scroll target="g2" offset="65">Projects by Region Graph</a></li>
+		<li><a href="" smooth-scroll target="g3" offset="65">Storage Saves Graph</a></li>
+		<li><a href="" smooth-scroll target="g4" offset="65">System Status Graph</a></li>
+
+		<li ng-repeat="singleProject in projectList">
+			<a href="" smooth-scroll target="p{{$index}}" offset="116">{{singleProject.name}}</a>
+		</li>
+		<li ng-repeat='image in images'>
+			{{image}}
+		</li>
+		<li ng-show='reddit.busy'>Loading data...</li>
+	</ul>
+</div>
+
+<form class="input-append projectAutoCompleteRow">
+	<input id="projectAutoComplete" type="text" placeholder="Search for Projects...">
+	<button class="btn dropdown-toggle btn-mini" data-toggle="dropdown">
+		<span class="caret"></span>
+	</button>
+	<ul class="dropdown-menu">
+	  ...
+	</ul>
+	<button type="submit" 
+			class="btn btn-mini" 
+			id="projectAutoCompletePlacibo">
+		<i class="icon-search"></i>
+	</button>
+</form>
+
+<form class="input-append createProjectRow dropup">
+	<input id="createProjectNaming" type="text" placeholder="Create a New Project...">
+	<button class="btn dropdown-toggle btn-mini" data-toggle="dropdown">
+		<span class="caret"></span>
+	</button>
+	<ul class="dropdown-menu">
+	  ...
+	</ul>
+	<button type="submit" 
+			class="btn btn-mini" 
+			id="createUserPlus">
+		<i class="icon-plus"></i>
+	</button>
+</form>
