@@ -54,9 +54,13 @@
   </footer> 
 
   <div class="sidebar well" 
-       ng-show="sidebarState"
-       ui-view="sidebar">
+       ng-show="sidebarState">
   </div>
+
+  <div class="sidebarMenu" 
+       ui-view="sidebar"
+       ng-show="sidebarState">
+  </div> 
 
 </div>
 

@@ -27,7 +27,8 @@ app.config(function($stateProvider, $urlRouterProvider){
         templateUrl: '/views/partials/dashboard.html'
       },
       "sidebar": {
-        templateUrl: '/views/partials/activity-monitor.html'
+        templateUrl: '/views/partials/activity-monitor.html',
+        controller: 'activityMonitorCtrl'
       }
     }
   })
@@ -44,7 +45,8 @@ app.config(function($stateProvider, $urlRouterProvider){
         controller: 'projectsCtrl'
       },
       "sidebar": {
-        templateUrl: '/views/partials/activity-monitor.html'
+        templateUrl: '/views/partials/activity-monitor.html',
+        controller: 'activityMonitorCtrl'
       }
     }
   })
@@ -62,7 +64,7 @@ app.config(function($stateProvider, $urlRouterProvider){
       },
       "sidebar": {
         templateUrl: '/views/partials/activity-monitor.html',
-        controller: 'peopleCtrl'
+        controller: 'activityMonitorCtrl'
       }
     }
   })
@@ -77,7 +79,7 @@ app.config(function($stateProvider, $urlRouterProvider){
       },
       "sidebar": {
         templateUrl: '/views/partials/activity-monitor.html',
-        controller: 'playCtrl'
+        controller: 'activityMonitorCtrl'
       }
     }
   })
@@ -92,7 +94,7 @@ app.config(function($stateProvider, $urlRouterProvider){
       },
       "sidebar": {
         templateUrl: '/views/partials/activity-monitor.html',
-        controller: 'playCtrl'
+        controller: 'activityMonitorCtrl'
       }
     }
   })
@@ -106,7 +108,7 @@ app.config(function($stateProvider, $urlRouterProvider){
       },
       "sidebar": {
         templateUrl: '/views/partials/activity-monitor.html',
-        controller: 'playCtrl'
+        controller: 'activityMonitorCtrl'
       }
     }
   });

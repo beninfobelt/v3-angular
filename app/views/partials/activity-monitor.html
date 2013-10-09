@@ -1,10 +1,10 @@
 <h3  green-man>Activity Monitor</h3>
-<!-- <hr/> -->
+
 <div class="sidebarControls" nice-scrollbar>
 	<ul class="sidebarContentSelections" infinite-scroll='loadMore()' infinite-scroll-distance='10'>
 
-		<li ng-repeat="singleProject in projectList">
-			<a href="" smooth-scroll target="p1" offset="175">{{singleProject}}</a>
+		<li ng-repeat="singleActivityEvent in activityLogList">
+			<a href="">{{singleActivityEvent.title}}</a>
 		</li>
 		<li ng-repeat='image in images'>
 			{{image}}
@@ -13,8 +13,9 @@
 
 	</ul>
 </div>
-<form class="input-append sidebarAutoCompleteRow dropup">
-	<input id="sidebarAutoComplete" type="text">
+
+<form class="input-append sidebarAutoCompleteRow">
+	<input id="sidebarAutoComplete" type="text" placeholder="Search for Log Events...">
 	<button class="btn dropdown-toggle btn-mini" data-toggle="dropdown">
 		<span class="caret"></span>
 	</button>
@@ -22,8 +23,7 @@
 	  ...
 	</ul>
 	<button type="submit" 
-			class="btn btn-mini" 
-			id="sidebarAutoCompletePlacibo">
-		<i class="icon-plus"></i>
+			class="btn btn-mini autoCompletePlaciboButton">
+		<i class="icon-search"></i>
 	</button>
 </form>
