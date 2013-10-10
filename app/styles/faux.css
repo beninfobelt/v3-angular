@@ -195,7 +195,7 @@ overflow:hidden;
 }
 
 .canvasPot {
-margin-left:215px;
+margin:0px 0px 675px 215px;
 padding-top:65px;
 }
 
@@ -394,15 +394,14 @@ margin:0px;
 list-style:none;
 }
 
-.areYouSureToDelete {
-background-color:red;
+.sidebarContentSelections li {
+  /* overflow:hidden;*/
 }
 
 .canvasMenuSelections li span, .sidebarContentSelections li span {
 text-align:center;
 padding:7px 0px 3px 0px;
 border-bottom:1px solid #e3e3e3;
-height:21px;
 display:block;
 float:left;
 }
@@ -413,6 +412,16 @@ width:159px;
 
 .sidebarContentSelections li span {
 width:149px;
+}
+
+.sidebarContentSelections li span a {
+font-size: 11px !important;
+font-weight:normal !important;
+}
+
+.sidebarContentSelections li span h6 a {
+font-size: 13px !important;
+font-weight: bold !important;
 }
 
 .canvasMenuSelections li div, .sidebarContentSelections li div {
@@ -431,6 +440,45 @@ width:20px;
 .canvasMenuSelections li:last-child,
 .sidebarContentSelections li:last-child {
 border-bottom:0px;
+}
+
+.closedActivityEvent {
+height:21px;
+}
+
+.openedActivityEvent {
+text-align:left !important;
+overflow:hidden;
+line-height:11px !important;
+padding:6px 0px 3px 0px !important;
+}
+
+.openedActivityEvent ul {
+margin:10px 0px 3px 20px;
+color:#777;
+}
+
+.openedActivityEvent li {
+list-style:disc;
+}
+
+.openedActivityEvent h6 {
+margin:0px;
+color:#777;
+}
+
+.openedActivityEvent h6 a {
+margin:0px;
+color:#777;
+}
+
+.openedActivityEvent label {
+font-size:10px;
+color:#494949;
+font-weight:bold;
+margin:0px;
+height:12px;
+cursor:default;
 }
 
 .createProjectRow, .projectAutoCompleteRow {
@@ -488,8 +536,6 @@ padding:5px 6px 3px 6px !important;
    -moz-border-top-right-radius:0 !important;
         border-top-right-radius:0 !important;
 }
-
-
 
 .sidebarButton {
 padding:0px 1px 0px 1px !important;

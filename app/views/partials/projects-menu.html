@@ -8,100 +8,77 @@
 		</li>
 		-->
 
-		<li ng-mouseenter="g1show = true" 
-		    ng-mouseleave="g1show = false">
-
+		<li ng-mouseenter="g1show = true" ng-mouseleave="g1show = false">
 		    <div>
 				<i class="icon-lock"
 				   ng-show="g1show"></i>
 			</div>
-
 			<span>
 				<a href="" smooth-scroll target="g1" offset="65">Line of Business Graph</a>
 			</span>
-			
 			<div>
 				<i class="icon-star"
 				   ng-show="g1show"></i>
 			</div>
-
 		</li>
 
-		<li ng-mouseenter="g2show = true" 
-		    ng-mouseleave="g2show = false">
-
-		    <div>
+		<li ng-mouseenter="g2show = true" ng-mouseleave="g2show = false">
+			<div>
 				<i class="icon-lock"
 				   ng-show="g2show"></i>
 			</div>
-
 			<span>
 				<a href="" smooth-scroll target="g2" offset="65">Projects by Region Graph</a>
 			</span>
-			
 			<div>
 				<i class="icon-star"
 				   ng-show="g2show"></i>
 			</div>
-
 		</li>
 
-		<li ng-mouseenter="g3show = true" 
-		    ng-mouseleave="g3show = false">
-
+		<li ng-mouseenter="g3show = true" ng-mouseleave="g3show = false">
 		    <div>
 				<i class="icon-lock"
 				   ng-show="g3show"></i>
 			</div>
-
 			<span>
 				<a href="" smooth-scroll target="g3" offset="65">Storage Saves Graph</a>
 			</span>
-			
 			<div>
 				<i class="icon-star"
 				   ng-show="g3show"></i>
 			</div>
-
 		</li>
 
-		<li ng-mouseenter="g4show = true" 
-		    ng-mouseleave="g4show = false">
-
+		<li ng-mouseenter="g4show = true" ng-mouseleave="g4show = false">
 		    <div>
 				<i class="icon-lock"
 				   ng-show="g4show"></i>
 			</div>
-
 			<span>
 				<a href="" smooth-scroll target="g4" offset="65">System Status Graph</a>
 			</span>
-			
 			<div>
 				<i class="icon-star"
 				   ng-show="g4show"></i>
 			</div>
-
 		</li>
 
 		<li ng-repeat="singleProject in projectList"
 		    ng-mouseenter="projectToolsShow = true" 
 		    ng-mouseleave="projectToolsShow = false">
-
-		   <div>
+		    <div>
 				<i class="icon-remove"
 				   ng-show="projectToolsShow"></i>
 			</div>
-
 		    <span>
 				<a href="" 
 				   smooth-scroll 
-				   target="p{{$index}}" 
+				   target="p{{singleProject.serialNumber}}" 
 				   offset="116">
 				   		{{singleProject.name}}
 				</a>
 			</span>
-			
 			<div>
 				<i class="icon-star"
 				   ng-show="projectToolsShow"
@@ -112,18 +89,15 @@
 				   ng-if="singleProject.isFavorite==false"
 				   ng-click="singleProject.isFavorite = true"></i>
 			</div>
-
 		</li>
 
 		<li ng-repeat="image in images"
 		    ng-mouseenter="projectToolsShow = true" 
 		    ng-mouseleave="projectToolsShow = false">
-
 		    <div>
 				<i class="icon-remove"
 				   ng-show="projectToolsShow"></i>
 			</div>
-
 			<span>
 				<a href="" 
 				   smooth-scroll 
@@ -132,12 +106,10 @@
 				   		{{image}}
 				</a>
 			</span>
-			
 			<div>
 				<i class="icon-star"
 				   ng-show="projectToolsShow"></i>
 			</div>
-
 		</li>
 
 		<li ng-show='reddit.busy'>Loading data...</li>
