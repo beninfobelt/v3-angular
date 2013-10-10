@@ -144,8 +144,16 @@ left:20px;
 position:fixed;
 }
 
+.tall {
+
+}
+
+.short {
+
+}
+
 .skinny {
-margin-right:273px;
+margin-right:272px;
 }
 
 .fat {
@@ -384,12 +392,40 @@ margin:0px;
 
 .canvasMenuSelections li, .sidebarContentSelections li {
 list-style:none;
+}
+
+.areYouSureToDelete {
+background-color:red;
+}
+
+.canvasMenuSelections li span, .sidebarContentSelections li span {
 text-align:center;
-margin:0px 12px 0px 12px;
-padding:6px 0px 4px 0px;
+padding:7px 0px 3px 0px;
 border-bottom:1px solid #e3e3e3;
 height:21px;
-overflow:hidden;
+display:block;
+float:left;
+}
+
+.canvasMenuSelections li span {
+width:159px;
+}
+
+.sidebarContentSelections li span {
+width:149px;
+}
+
+.canvasMenuSelections li div, .sidebarContentSelections li div {
+margin:5px 2px 7px 2px;
+height:20px;
+float:left;
+text-align:center;
+width:14px;
+}
+
+.sidebarContentSelections li div.leftTool {
+margin:5px 6px 7px 2px;
+width:20px;
 }
 
 .canvasMenuSelections li:last-child,
@@ -453,6 +489,43 @@ padding:5px 6px 3px 6px !important;
         border-top-right-radius:0 !important;
 }
 
+
+
+.sidebarButton {
+padding:0px 1px 0px 1px !important;
+height:18px !important;
+margin-left:1px;
+}
+
+.createButton i {
+margin:0px !important;
+background-position-x: 0px !important;
+background-position-y: -97px !important;
+}
+
+.searchButton i {
+margin:0px !important;
+background-position-x: -48px !important;
+background-position-y: -1px !important;
+}
+
+.injestButton i {
+margin:0px !important;
+background-position-x: -288px;
+background-position-y: -145px;
+}
+
+.completeButton i {
+margin:0px !important;
+background-position-x: -72px;
+background-position-y: -97px;
+}
+
+.issueButton i {
+margin:0px !important;
+background-position-x: 0px;
+background-position-y: -121px;
+}
 
 
 

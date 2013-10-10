@@ -64,7 +64,7 @@ app.controller('projectDetailCtrl', ['$scope',
 
           $scope.loadingMore = function() {
             var last = $scope.images[$scope.bunk.length - 1];
-            for(var i = 1; i <= 8; i++) {
+            for(var i = 1; i <= 1; i++) {
               $scope.images.push(last + i);
             }
           };
