@@ -61,7 +61,7 @@ nav .navbar-inner {
 margin:14px 0px 17px 0px;
 }
 
-.navbar-inner li a {
+.nav li a {
 padding:6px 30px 4px 0px !important;
 }
 
@@ -105,21 +105,36 @@ border: 2px solid #e3e3e3 !important;
 ******* FOOTER SPECIFIC ITEMS ********
 **************************************/
 
-footer {
+.footerCanvas {
 bottom:0px;
 background-color:#fff;
 right:0px;
+z-index:1098;
+padding:14px 0px 14px 0px;
+}
+
+.footerCanvas .short {
+height:30px;
+}
+
+.footerCanvas .tall {
+height:100px;
+}
+
+footer {
+bottom:0px;
+right:0px;
 z-index:1099;
+padding:0px 20px 16px 20px;
 }
 
-footer .navbar-inner {
-margin:14px 0px 14px 0px;
-border-bottom: 2px solid #e3e3e3 !important;
-}
-
-footer .pull-right li {
-padding-top:5px;
+footer li.labeled {
+margin-top:6px;
 color:#777;
+}
+
+footer label {
+display:inline;
 }
 
 footer label:hover {
@@ -127,29 +142,17 @@ color:#333;
 text-decoration:none;
 }
 
-footer label {
-display:inline;
-}
-
 footer label, footer, nav {
 font-size:12px;
 }
 
-#sideClick {
+#sideClick, #helpClick {
 margin-top:-2px;
 }
 
-.canvas, footer {
+.contentCanvas, footer, .footerCanvas {
 left:20px;
 position:fixed;
-}
-
-.tall {
-
-}
-
-.short {
-
 }
 
 .skinny {
@@ -164,22 +167,33 @@ margin-right:20px;
 ***** CANVAS POT SPECIFIC ITEMS ******
 **************************************/
 
-.canvas {
+.contentCanvas {
 top:64px;
-bottom:62px;
 right:0px;
 z-index:-1000;
+}
+
+.ccShort {
+bottom:62px;
+}
+
+.ccTall {
+bottom:132px;
 }
 
 .topshelf {
 top:64px;
 }
 
-.bottomshelf {
+.bottomshelfShort {
 bottom:62px;
 }
 
-.topshelf, .bottomshelf {
+.bottomshelfTall {
+bottom:132px;
+}
+
+.topshelf, .bottomshelfShort, .bottomshelfTall {
 right:5px;
 left:25px;
 position:fixed;
@@ -290,14 +304,14 @@ padding:3px 7px 0px 5px;
 *****************************************************/
 
 
-.canvasMenu h3, .sidebarMenu h3 {
+.contentMenu h3, .sidebarMenu h3 {
 position:fixed;
 top:71px;
 width:195px;
 text-align:center;
 }
 
-.canvasMenu h3 {
+.contentMenu h3 {
 left:40px;
 }
 
@@ -306,11 +320,11 @@ right:40px;
 }
 
 #ascrail2000 {
-  left:26px !important;
+left:26px !important;
 }
 
 #ascrail2001 {
-  right:26px !important;
+right:26px !important;
 }
 
 .sidebar {
@@ -324,18 +338,89 @@ text-align:center;
 overflow:hidden;
 }
 
-.canvasMenuControls, .sidebarControls {
+.contentMenuControls, .sidebarControls {
 background-color:#fff;
 width:195px;
 overflow-y:hidden;
 }
 
-.canvasMenuControls {
+.contentMenuControls {
 border-left:1px solid #e3e3e3;
 border-right:1px solid #e3e3e3;
 }
 
+.contentMenu .dropdown-menu, 
+.bottomInputRow .dropdown-menu {
+position:fixed;
+width:175px;
+margin:0px !important;
+padding:10px !important;
+-webkit-border-radius:0 !important;
+   -moz-border-radius:0 !important;
+        border-radius:0 !important;
+}
+
+.contentMenuControls, 
+.contentMenu .dropdown-menu, 
+.bottomInputRow .dropdown-menu {
+position:fixed;
+left:40px;
+top:138px;
+}
+
+.cmcShort {
+bottom:104px !important;
+}
+
+.cmcTall {
+bottom:179px !important;
+}
+
+.contentMenuControls a {
+color: #777;
+text-decoration:none;
+}
+
+.contentMenuControls a:hover {
+color:#333;
+text-decoration:none;
+}
+
+.contentMenuControls ul {
+margin:0px;
+}
+
+.contentMenuSelections li {
+list-style:none;
+overflow:hidden;
+}
+
+.contentMenuSelections li span {
+text-align:center;
+padding:7px 0px 3px 0px;
+border-bottom:1px solid #e3e3e3;
+float:left;
+height:20px;
+}
+
+.contentMenuSelections li span {
+width:159px;
+}
+
+.contentMenuSelections li div {
+margin:5px 2px 7px 2px;
+height:20px;
+float:left;
+text-align:center;
+width:14px;
+}
+
 .sidebarControls {
+position:fixed;
+right:40px;
+top:138px;
+bottom:32px !important;
+
 border-bottom: 1px solid #e3e3e3;
 border-left: 1px solid #e3e3e3;
 border-right: 1px solid #e3e3e3;
@@ -347,9 +432,7 @@ border-bottom-left-radius: 4px;
 border-bottom-right-radius: 4px;
 }
 
-.canvasMenu .dropdown-menu, 
-.createProjectRow .dropdown-menu,
-.sidebar .dropdown-menu {
+.sidebarMenu .dropdown-menu {
 position:fixed;
 width:175px;
 margin:0px !important;
@@ -359,59 +442,49 @@ padding:10px !important;
         border-radius:0 !important;
 }
 
-.canvasMenuControls, 
-.canvasMenu .dropdown-menu, 
-.createProjectRow .dropdown-menu {
-position:fixed;
-left:40px;
-top:138px;
-bottom:104px !important;
-}
-
-.sidebarControls, 
 .sidebarMenu .dropdown-menu {
 position:fixed;
-right:40px;
+right:40px !important;
 top:138px;
 bottom:32px !important;
+left:auto !important;
 }
 
-.canvasMenuControls a, .sidebarControls a {
-color: #777;cursorborder:"#ddd",
+.sidebarControls a {
+color: #777;
 text-decoration:none;
 }
 
-.canvasMenuControls a:hover, .sidebarControls a:hover {
+.sidebarControls a:hover {
 color:#333;
 text-decoration:none;
 }
 
-.canvasMenuControls ul, .sidebarControls ul {
+.sidebarControls ul {
 margin:0px;
 }
 
-.canvasMenuSelections li, .sidebarContentSelections li {
-list-style:none;
-}
-
 .sidebarContentSelections li {
-  /* overflow:hidden;*/
+list-style:none;
+overflow:hidden;
 }
 
-.canvasMenuSelections li span, .sidebarContentSelections li span {
+.sidebarContentSelections li span {
 text-align:center;
 padding:7px 0px 3px 0px;
 border-bottom:1px solid #e3e3e3;
-display:block;
 float:left;
-}
-
-.canvasMenuSelections li span {
-width:159px;
+height:20px;
 }
 
 .sidebarContentSelections li span {
 width:149px;
+}
+
+
+/*
+.openedActivityEvent {
+height:250px !important;
 }
 
 .sidebarContentSelections li span a {
@@ -423,8 +496,10 @@ font-weight:normal !important;
 font-size: 13px !important;
 font-weight: bold !important;
 }
+*/
 
-.canvasMenuSelections li div, .sidebarContentSelections li div {
+.sidebarContentSelections li div.leftTool, 
+.sidebarContentSelections li div.rightTool  {
 margin:5px 2px 7px 2px;
 height:20px;
 float:left;
@@ -433,18 +508,21 @@ width:14px;
 }
 
 .sidebarContentSelections li div.leftTool {
-margin:5px 6px 7px 2px;
+margin:5px 6px 0px 2px;
 width:20px;
 }
-
-.canvasMenuSelections li:last-child,
+/*
+.contentMenuSelections li:last-child,
 .sidebarContentSelections li:last-child {
 border-bottom:0px;
 }
 
+
+
 .closedActivityEvent {
-height:21px;
+
 }
+
 
 .openedActivityEvent {
 text-align:left !important;
@@ -480,8 +558,9 @@ margin:0px;
 height:12px;
 cursor:default;
 }
+*/
 
-.createProjectRow, .projectAutoCompleteRow {
+.bottomInputRow, .projectAutoCompleteRow {
 position:fixed !important;
 left:40px;
 margin:0px !important;
@@ -497,10 +576,18 @@ right:40px;
 top:116px;
 }
 
-.createProjectRow {
+.bottomInputRow {
 padding-bottom:20px;
 background-color: #F5F5F5;
 bottom:62px;
+}
+
+.birShort {
+bottom:62px;
+}
+
+.birTall {
+bottom:137px;
 }
 
 #projectAutoComplete, 
@@ -610,7 +697,7 @@ margin:1px 0px 0px 0px !important;
 overflow:hidden;
 }
 
-.nav-tabs a {
+.nav-tabs li a {
 padding:0px 9px 0px 9px !important;
 cursor:pointer;
 }

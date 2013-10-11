@@ -1,9 +1,118 @@
 <h3  green-man>Activity Monitor</h3>
 
 <div class="sidebarControls" nice-scrollbar>
-	<ul class="sidebarContentSelections" infinite-scroll='loadMore()' infinite-scroll-distance='10'>
-		
+	<ul class="sidebarContentSelections"> <!--infinite-scroll='loadMore()' infinite-scroll-distance='10'-->
 
+		<li ng-repeat="singleActivityEvent in activityLogList"
+		    ng-mouseenter="activityToolsShow = true" 
+		    ng-mouseleave="activityToolsShow = false"
+       		ng-class="{'openedActivityEvent':singleActivityEvent.isOpened, 
+       				   '':!singleActivityEvent.isOpened}">
+
+       		<div class="activityHeader">
+			    <div class="leftTool" ng-switch on="singleActivityEvent.category">
+			    	
+					<button type="button" 
+					 		ng-click="singleActivityEvent.isOpened = !singleActivityEvent.isOpened"
+							class="btn btn-success sidebarButton createButton"
+							ng-switch-when="create">
+								<i class="icon-white icon-plus-sign"></i>
+					</button>
+					<button type="button" 
+					 		ng-click="singleActivityEvent.isOpened = !singleActivityEvent.isOpened"
+							class="btn btn-success sidebarButton completeButton"
+							ng-switch-when="complete">
+								<i class="icon-white icon-ok-sign"></i>
+					</button>
+					<button type="button" 
+					 		ng-click="singleActivityEvent.isOpened = !singleActivityEvent.isOpened"
+							class="btn btn-success sidebarButton injestButton"
+							ng-switch-when="injest">
+								<i class="icon-white icon-circle-arrow-up"></i>
+					</button>
+					<button type="button" 
+					 		ng-click="singleActivityEvent.isOpened = !singleActivityEvent.isOpened"
+							class="btn btn-success sidebarButton searchButton"
+							ng-switch-when="search">
+								<i class="icon-white icon-search"></i>
+					</button>
+					<button type="button" 
+					 		ng-click="singleActivityEvent.isOpened = !singleActivityEvent.isOpened"
+							class="btn btn-danger sidebarButton issueButton"
+							ng-switch-when="issue">
+								<i class="icon-white icon-exclamation-sign"></i>
+					</button>
+				
+				</div>
+
+				<!--
+				<span ng-if="singleActivityEvent.isOpened==true">
+						<a href="" ng-click="singleActivityEvent.isOpened = !singleActivityEvent.isOpened">
+							{{singleActivityEvent.title}}
+						</a>
+				</span>
+				-->
+
+				<span>
+					<a href="" ng-click="singleActivityEvent.isOpened = !singleActivityEvent.isOpened">
+						{{singleActivityEvent.isOpened}}
+					</a>
+				</span>
+				
+				<div class="rightTool">
+					<i class="icon-remove"
+					   ng-show="activityToolsShow"></i>
+				</div>
+
+
+				<!--
+				<ul ng-if="singleActivityEvent.isOpened==true">
+					<li>
+						<label>Who:</label>
+						<h6>{{singleActivityEvent.user}}<h6>
+					</li>
+					<li>
+						<label>What:</label>
+						<h6>
+							<a href="" 
+							   smooth-scroll 
+							   target="p{{singleActivityEvent.serialNumber}}" 
+							   offset="116">
+							   		{{singleActivityEvent.projectName}}
+							</a>
+						</h6>						
+					</li>
+					<li>
+						<label>When:</label>
+						{{singleActivityEvent.timestamp | date:'MMM dd yyyy hh:mm a'}}
+					</li>
+				</ul>
+			-->
+			</div>
+
+			<div class="activityBody"> <!-- ng-if="singleActivityEvent.isOpened==true"-->
+				<label>Who:</label>
+				<h6>{{singleActivityEvent.user}}<h6>
+				<label>What:</label>
+				<h6>
+					<a href="" 
+					   smooth-scroll 
+					   target="p{{singleActivityEvent.serialNumber}}" 
+					   offset="116">
+					   		{{singleActivityEvent.projectName}}
+					</a>
+				</h6>	
+				<label>When:</label>
+				{{singleActivityEvent.timestamp | date:'MMM dd yyyy hh:mm a'}}
+			</div>
+
+		</li>
+
+
+
+
+
+		<!--
 		<li ng-repeat="singleActivityEvent in activityLogList"
 		    ng-mouseenter="activityToolsShow = true" 
 		    ng-mouseleave="activityToolsShow = false">
@@ -86,8 +195,6 @@
 
 
 
-
-		<!--
 		<li ng-repeat="image in images"
 		    ng-mouseenter="activityToolsShow = true" 
 		    ng-mouseleave="activityToolsShow = false">
