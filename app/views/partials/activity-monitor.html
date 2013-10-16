@@ -1,6 +1,6 @@
 <h3  green-man>Activity Monitor</h3>
 
-<div class="sidebarControls" nice-scrollbar>
+<div class="sidebarControls normalTop" nice-scrollbar>
 	<ul class="sidebarContentSelections">
 	<!--<ul class="sidebarContentSelections"> --><!--infinite-scroll='loadMore()' infinite-scroll-distance='10'-->
 		<li ng-repeat="singleActivityEvent in activityLogList"
@@ -44,14 +44,21 @@
 				</button>
 			</div>
 
-			<span>
+			<span ng-class="{'lastListItem':$last}">
 	       		<a href="" ng-click="singleActivityEvent.isOpened = !singleActivityEvent.isOpened">
-						{{singleActivityEvent.title}}
+						{{singleActivityEvent.isOpened}}
 				</a>
 			</span>
 
 			<div class="rightTool">
-				<i class="icon-remove" ng-show="activityToolsShow"></i>
+				<!--<i class="icon-star"
+				   ng-show="activityToolsShow"
+				   ng-if="singleActivityEvent.isFavorite==true"
+				   ng-click="singleActivityEvent.isFavorite = false"></i>-->
+				<i class="icon-star-empty"
+				   ng-show="activityToolsShow"
+				   ng-if="singleActivityEvent.isFavorite==false"
+				   ng-click="singleActivityEvent.isFavorite = true"></i>
 			</div>
 
 			<ul ng-if="singleActivityEvent.isOpened==true">
@@ -64,12 +71,9 @@
 	       		<li>
 					<em>What:</em>
 					<div>
-						<!--<a href="" 
+						<!--
 						   smooth-scroll 
-						   target="p{{singleActivityEvent.serialNumber}}" 
-						   offset="116">
-						   		{{singleActivityEvent.projectName}}
-						</a>-->
+						-->
 						<a href="" 
 						   project-link
 						   projectid="{{singleActivityEvent.serialNumber}}"
@@ -112,7 +116,7 @@
 	<button class="btn dropdown-toggle btn-mini" data-toggle="dropdown">
 		<span class="caret"></span>
 	</button>
-	<ul class="dropdown-menu">
+	<ul class="dropdown-menu normalTop">
 	  ...
 	</ul>
 	<button type="submit" 

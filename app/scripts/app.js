@@ -10,7 +10,7 @@ angular.module('auxFeatures', []);
 
 app.config(function($stateProvider, $urlRouterProvider){
   
-  $urlRouterProvider.otherwise('/home/projects');
+  $urlRouterProvider.otherwise('/home/dashboard');
  
   $stateProvider
       .state('template', {
@@ -25,6 +25,10 @@ app.config(function($stateProvider, $urlRouterProvider){
     views: {
       "content": {
         templateUrl: '/views/partials/dashboard.html'
+      },
+      "menu": {
+        templateUrl: '/views/partials/graphs-menu.html',
+        controller: 'projectsCtrl'
       },
       "sidebar": {
         templateUrl: '/views/partials/activity-monitor.html',

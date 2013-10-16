@@ -1,45 +1,27 @@
 <h3 green-man>Projects</h3>
 
-<div class="contentMenuControls" 
+<div class="contentMenuControls cmcDecorationsNormal normalTop" 
      ng-class="{'cmcTall':helpState, 'cmcShort':!helpState}"
 	 nice-scrollbar>
 	<ul class="contentMenuSelections" 
 		ng-controller="graphsCtrl"> <!-- infinite-scroll='loadMore()' infinite-scroll-distance='10' -->
-		<!--
-		<li ng-repeat="alphaProject in reddit.items">
-			<a href="" smooth-scroll target="p1" offset="175">{{alphaProject.author}}</a>
-		</li>
-		-->
-
-		<li ng-repeat="singleGraph in graphList"
-			ng-mouseenter="gshow = true" 
-			ng-mouseleave="gshow = false">
-		    <div class="leftTool">
-				<i class="icon-lock"
-				   ng-show="gshow"></i>
-			</div>
-			<span> <!-- target="g1" smooth-scroll  -->
-				<a href="" 
-				   graph-link
-				   graphid="{{singleGraph.graphID}}"
-				   offset="65">{{singleGraph.name}}
-				</a>
-			</span>
-			<div class="rightTool">
-				<i class="icon-star"
-				   ng-show="gshow"></i>
-			</div>
-		</li>
+		
 
 		<li ng-repeat="singleProject in projectList"
 		    ng-mouseenter="projectToolsShow = true" 
 		    ng-mouseleave="projectToolsShow = false"
 		    ng-cloak>
 		    <div class="leftTool">
-				<i class="icon-remove"
-				   ng-show="projectToolsShow"></i>
+				<!--<i class="icon-star"
+				   ng-show="projectToolsShow"
+				   ng-if="singleProject.isFavorite==true"
+				   ng-click="singleProject.isFavorite = false"></i>-->
+				<i class="icon-star-empty"
+				   ng-show="projectToolsShow"
+				   ng-if="singleProject.isFavorite==false"
+				   ng-click="singleProject.isFavorite = true"></i>
 			</div>
-		    <span><!--target="p{{singleProject.serialNumber}}"  smooth-scroll -->
+		    <span ng-class="{'lastListItem':$last}"><!--target="p{{singleProject.serialNumber}}"  smooth-scroll -->
 				<a href="" 
 				   project-link
 				   projectid="{{singleProject.serialNumber}}"
@@ -48,6 +30,15 @@
 				</a>
 			</span>
 			<div class="rightTool">
+			</div>
+		</li>
+
+		<!--
+		<li ng-repeat="image in images"
+		    ng-mouseenter="projectToolsShow = true" 
+		    ng-mouseleave="projectToolsShow = false"
+		    ng-cloak>
+		    <div class="leftTool">
 				<i class="icon-star"
 				   ng-show="projectToolsShow"
 				   ng-if="singleProject.isFavorite==true"
@@ -56,16 +47,6 @@
 				   ng-show="projectToolsShow"
 				   ng-if="singleProject.isFavorite==false"
 				   ng-click="singleProject.isFavorite = true"></i>
-			</div>
-		</li>
-
-		<li ng-repeat="image in images"
-		    ng-mouseenter="projectToolsShow = true" 
-		    ng-mouseleave="projectToolsShow = false"
-		    ng-cloak>
-		    <div class="leftTool">
-				<i class="icon-remove"
-				   ng-show="projectToolsShow"></i>
 			</div>
 			<span>
 				<a href="" 
@@ -76,10 +57,8 @@
 				</a>
 			</span>
 			<div class="rightTool">
-				<i class="icon-star"
-				   ng-show="projectToolsShow"></i>
 			</div>
-		</li>
+		</li>-->
 
 		<li ng-show='reddit.busy'>Loading data...</li>
 	</ul>
@@ -90,7 +69,7 @@
 	<button class="btn dropdown-toggle btn-mini" data-toggle="dropdown">
 		<span class="caret"></span>
 	</button>
-	<ul class="dropdown-menu"
+	<ul class="dropdown-menu normalTop"
       	ng-class="{'menuShort':helpState, 'menuTall':!helpState}">
 	  ...
 	</ul>
@@ -106,7 +85,7 @@
 	<button class="btn dropdown-toggle btn-mini" data-toggle="dropdown">
 		<span class="caret"></span>
 	</button>
-	<ul class="dropdown-menu"
+	<ul class="dropdown-menu normalTop"
       	ng-class="{'menuShort':helpState, 'menuTall':!helpState}">
 	  ...
 	</ul>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+
+<html xmlns:ng="http://angularjs.org" id="ng-app" ng-app="myapp">
+<html ng-app="myapp">
+
+<head>
+    <title>Orion</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+
+    <link href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.1/css/bootstrap.min.css" rel="stylesheet">
+
+</head>
+
+<body class="container-fluid">
+    <script src="../bower_components/angular/angular.min.js"></script>
+    <script src="../scripts/app-no-frills.js"></script>
+    <script src="../scripts/services/users.js"></script>
+    <script src="../scripts/controllers/no-frills.js"></script>
+    <div ng-controller="noFrillsController">
+
+        <a href="/logout" class="btn" ng-click="">Logout</a>
+
+        <h3>Users</h3>
+        <table class="table">
+            <tr>
+                <th>Name</th> <th>Email</th> <th>ID</th>
+            </tr>
+            <tr ng-repeat="user in users.data.results">
+                <td>{{user.name}}</td> <td>{{user.email}}</td> <td>{{user.id}}</td>
+            </tr>
+        </table>
+
+    </div>
+</body>
+
+</html>

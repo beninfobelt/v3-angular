@@ -2,10 +2,8 @@
 
 var app = angular.module('myapp');
 
-app.controller('projectsCtrl', ['$scope', 'Reddit',
-        function ($scope, Reddit) {
-
-    $scope.reddit = new Reddit();
+app.controller('projectsCtrl', ['$scope',
+        function ($scope) {
 
 	$scope.projectList = [
 		{

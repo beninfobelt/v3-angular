@@ -6,12 +6,12 @@ app.controller('templateCtrl', ['$scope',
         function ($scope) {
 
     $scope.menuItems = [
+      'dashboard',
       'projects',
       //'newbrowser',
       'explore',
       'governance',
-      'create',
-      'configuration'
+      'settings'
     ];
 
     $scope.sessionItems = [

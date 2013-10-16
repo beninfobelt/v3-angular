@@ -21,16 +21,16 @@ input.simplebox:focus {
 }
 
 i:hover {
-	cursor:pointer;
+  cursor:pointer;
 }
 
 h3 {
-	margin:0px !important;
+  margin:0px !important;
 }
 
 .greenman {
-	font-size: 20px;
-	color:#6A832E;
+  font-size: 20px;
+  color:#6A832E;
 }
 
 /*************************************
@@ -340,9 +340,16 @@ text-align:center;
 overflow:hidden;
 }
 
-.contentMenuControls {
+.cmcDecorationsNormal {
 border-left:1px solid #e3e3e3;
 border-right:1px solid #e3e3e3;
+}
+
+.cmcDecorationsGraph {
+border:1px solid #e3e3e3;
+-webkit-border-radius: 4px;
+   -moz-border-radius: 4px;
+        border-radius: 4px;
 }
 
 .contentMenuControls, 
@@ -356,9 +363,16 @@ width:195px;
 .bottomInputRow .dropdown-menu,
 .sidebarMenu .dropdown-menu {
 position:fixed;
-top:138px;
 background-color:#fff;
 overflow-y:hidden;
+}
+
+.normalTop {
+top:138px;
+}
+
+.graphMenuTop {
+top:117px;
 }
 
 .projectAutoCompleteRow .dropdown-menu, 
@@ -469,6 +483,10 @@ text-align:center;
 display: inline-block;
 padding-bottom:6px;
 border-bottom:1px solid #e3e3e3;
+}
+
+.lastListItem {
+border-bottom:none !important;
 }
 
 .contentMenuSelections li span {
@@ -655,9 +673,9 @@ margin:0px !important;
 list-style:none;
 background-color:#ddd;
 margin:0px;
-padding:0px 0px 1px 10px;
+padding:1px 0px 1px 10px;
 font-weight:bold;
-height:19px;
+height:18px;
 overflow:hidden;
 position:fixed;
 left:255px;
@@ -808,7 +826,7 @@ height:450px;
 **************************************/
 
 .exploreBody {
-	margin-top:50px;
+  margin-top:50px;
 }
 
 /*************************************
@@ -816,7 +834,7 @@ height:450px;
 **************************************/
 
 .governanceBody {
-	margin-top:130px;
+  margin-top:130px;
 }
 
 /*************************************
@@ -824,7 +842,7 @@ height:450px;
 **************************************/
 
 .createBody {
-	margin-top:130px;
+  margin-top:130px;
 }
 
 /*************************************
@@ -832,5 +850,5 @@ height:450px;
 **************************************/
 
 .settingsBody {
-	margin-top:130px;
+  margin-top:130px;
 }
