@@ -46,15 +46,15 @@
 
 			<span ng-class="{'lastListItem':$last}">
 	       		<a href="" ng-click="singleActivityEvent.isOpened = !singleActivityEvent.isOpened">
-						{{singleActivityEvent.isOpened}}
+						{{singleActivityEvent.title}}
 				</a>
 			</span>
 
 			<div class="rightTool">
-				<!--<i class="icon-star"
+				<i class="icon-star"
 				   ng-show="activityToolsShow"
 				   ng-if="singleActivityEvent.isFavorite==true"
-				   ng-click="singleActivityEvent.isFavorite = false"></i>-->
+				   ng-click="singleActivityEvent.isFavorite = false"></i>
 				<i class="icon-star-empty"
 				   ng-show="activityToolsShow"
 				   ng-if="singleActivityEvent.isFavorite==false"
@@ -71,9 +71,6 @@
 	       		<li>
 					<em>What:</em>
 					<div>
-						<!--
-						   smooth-scroll 
-						-->
 						<a href="" 
 						   project-link
 						   projectid="{{singleActivityEvent.serialNumber}}"

@@ -12,16 +12,16 @@
 		    ng-mouseleave="projectToolsShow = false"
 		    ng-cloak>
 		    <div class="leftTool">
-				<!--<i class="icon-star"
+				<i class="icon-star"
 				   ng-show="projectToolsShow"
 				   ng-if="singleProject.isFavorite==true"
-				   ng-click="singleProject.isFavorite = false"></i>-->
+				   ng-click="singleProject.isFavorite = false"></i>
 				<i class="icon-star-empty"
 				   ng-show="projectToolsShow"
 				   ng-if="singleProject.isFavorite==false"
 				   ng-click="singleProject.isFavorite = true"></i>
 			</div>
-		    <span ng-class="{'lastListItem':$last}"><!--target="p{{singleProject.serialNumber}}"  smooth-scroll -->
+		    <span ng-class="{'lastListItem':$last}"><!--target="p{{singleProject.serialNumber}}" -->
 				<a href="" 
 				   project-link
 				   projectid="{{singleProject.serialNumber}}"
@@ -50,7 +50,6 @@
 			</div>
 			<span>
 				<a href="" 
-				   smooth-scroll 
 				   target="p{{$index}}" 
 				   offset="116">
 				   		{{image}}
@@ -79,19 +78,12 @@
 	</button>
 </form>
 
-<form class="input-append bottomInputRow dropup"
+<form class="bottomInputRow dropup"
       ng-class="{'birTall':helpState, 'birShort':!helpState}">
-	<input id="createProjectNaming" type="text" placeholder="Create a New Project...">
-	<button class="btn dropdown-toggle btn-mini" data-toggle="dropdown">
-		<span class="caret"></span>
-	</button>
-	<ul class="dropdown-menu normalTop"
-      	ng-class="{'menuShort':helpState, 'menuTall':!helpState}">
-	  ...
-	</ul>
 	<button type="submit" 
 			class="btn btn-mini" 
 			id="createUserPlus">
+		Create Project
 		<i class="icon-plus"></i>
 	</button>
 </form>

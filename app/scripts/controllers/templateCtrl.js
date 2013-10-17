@@ -8,7 +8,6 @@ app.controller('templateCtrl', ['$scope',
     $scope.menuItems = [
       'dashboard',
       'projects',
-      //'newbrowser',
       'explore',
       'governance',
       'settings'
@@ -20,7 +19,7 @@ app.controller('templateCtrl', ['$scope',
     ];
 
     $scope.footerItems = [
-      'InfoBelt Website',
+      '© InfoBelt, LLC',
       'Contact'
     ];
 
